@@ -1,37 +1,33 @@
 import os
+import subprocess
 
 class OpenFile:
-    def road(rd):
-        return os.path.abspath(rd)
+    @staticmethod
+    def road():
+        return input("Podaj ścieżkę do pliku: ")
 
+    @staticmethod
     def plik(file):
-        x = open(file)
-        return x.read()
+        with open(file) as f:
+            return f.read()
 
-
-
-
+    @staticmethod
+    def edycja(pliczek):
+        subprocess.Popen(['notepad.exe', pliczek])
 
 def edit_file():
-    user_file = input("Podaj scierzkę do pliku")
-
     try:
-        user_input_open = OpenFile.plik(user_file)
+        file_path = OpenFile.road()
+        user_input_open = OpenFile.plik(file_path)
+        print("Otwarto plik:", file_path)
+        print("Zawartość pliku:")
+        print(user_input_open)
+        OpenFile.edycja(file_path)
 
-        if bool(user_input_open) == True:
-
-            print(OpenFile.road(user_file))
-            print(OpenFile.plik(user_file))
-
-
-
-    except:
-        print("Ściszka do pliku jest błędna")
-
-
-
+    except FileNotFoundError:
+        print("Plik nie został znaleziony.")
+    except Exception as e:
+        print("Wystąpił błąd:", e)
 
 if __name__ == '__main__':
     edit_file()
-
-
