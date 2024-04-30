@@ -12,8 +12,9 @@ class OpenFile:
             return f.read()
 
     @staticmethod
-    def edycja(pliczek):
-        subprocess.Popen(['notepad.exe', pliczek])
+    #do zastąpienia przez własny edytor w tk
+    def edycja(note_file):
+        subprocess.Popen(['ls'])
 
 def edit_file():
     try:
@@ -24,8 +25,6 @@ def edit_file():
         print(user_input_open)
         OpenFile.edycja(file_path)
 
-    except FileNotFoundError:
-        print("Plik nie został znaleziony.")
     except Exception as e:
         print("Wystąpił błąd:", e)
 
