@@ -1,8 +1,10 @@
-import os
-import backend_file_explorer
-from backend_file_explorer import InputsMethod as IM
-import backend_file_explorer as b
 
-print(backend_file_explorer.files_list("c:")[12])
+string = "121e1e"
 
-print( f"C:/{backend_file_explorer.files_list('c:')[12]}")
+index = string.find(".")
+if index == 0:
+    print(f"Znaleziono kropkę na pozycji {index}.")
+elif index == -1:
+    print(-1)
+else:
+    print("Nie znaleziono kropki.")
