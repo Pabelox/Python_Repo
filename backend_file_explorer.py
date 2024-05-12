@@ -1,32 +1,25 @@
 import os
-
+def files_list(file):
+    if os.path.exists(file) == True:
+        slfl = {}
+        ids = 0
+        for items in os.listdir(file):
+            slfl.update({ids: f"{items}"})
+            ids += 1
+        return slfl
+    else:
+        return print("Ścierzka niepoprawna")
 
 class InputsMethod:
     @staticmethod
-    def files_list(file):                               #lista folderów i plików  w bierzącym folderze
-        if os.path.exists(file) == True:                #sprawdzmy czy ścierzka istnieje
-            return os.listdir(file)
-        else:
-            return print("Ścierzka niepoprawna")
-    @staticmethod
+    #zmiana aktualnego katalogu i zwrot aktualenej ścieszki
     def catalog_change(file_patch):
         if os.path.exists(file_patch) == True:
-            os.chdir(file_patch)
+            (file_patch)
             return print(os.getcwd())
         else:
             return print("Ścierzka niepoprawna")
     @staticmethod
+    #Lista aktualnego folderu
     def current():
-        for w in os.listdir(os.getcwd()):
-            print("->",w)
-            return os.listdir(os.getcwd())
-
-
-    @staticmethod
-    def mover(lista :list) -> dict:
-            slfl = {}
-            ids = 0
-            for items in lista:
-                slfl.update({ids :f"{items}"})
-                ids +=1
-            print(slfl)
+        return os.listdir(os.getcwd())

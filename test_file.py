@@ -1,5 +1,8 @@
 import os
-
+import backend_file_explorer
 from backend_file_explorer import InputsMethod as IM
+import backend_file_explorer as b
 
-IM.mover(IM.current())
+print(backend_file_explorer.files_list("c:")[12])
+
+print( f"C:/{backend_file_explorer.files_list('c:')[12]}")
