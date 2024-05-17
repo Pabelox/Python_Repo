@@ -5,7 +5,6 @@ import os
 
 if __name__ == '__main__':
     while True :
-
         chopt = input("\nWybierz opcje:\n"
                             "1: Przejdź pod inny folder wybrany z listy \n"
                             "2: Zmień obecny folder\n"
@@ -26,6 +25,7 @@ if __name__ == '__main__':
         elif chopt == "4":
             for w in IM.current_list():
                 print(w)
+            print(os.getcwd())
         elif chopt == "exit":
             print("Exit processing")
             break

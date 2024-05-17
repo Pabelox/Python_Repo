@@ -1,5 +1,5 @@
 
-string = "121e1e"
+string = ".121e1e"
 
 index = string.find(".")
 if index == 0:
